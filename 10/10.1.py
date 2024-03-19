@@ -18,9 +18,10 @@ class Hissi:
     def siirry_kerrokseen(self, kerros):
         while self.nykyinen_kerros < kerros:
             self.kerros_ylos()
-        while self.ylin_kerros > kerros:
+        while self.nykyinen_kerros > kerros:
             self.kerros_alas()
 
-hissi = Hissi(1,10)
+
+hissi = Hissi(1, 10)
 hissi.siirry_kerrokseen(5)
 hissi.siirry_kerrokseen(1)
