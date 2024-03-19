@@ -1,5 +1,3 @@
-import random
-
 class auto:
 
     def __init__(self, rekisteri, huippunopeus):
