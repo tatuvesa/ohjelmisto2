@@ -4,7 +4,7 @@ class auto:
         self.rekisteri = rekisteri
         self.huippunopeus = huippunopeus
         self.nopeus = 0
-        self.kokomatka = 0
+        self.kokomatka = 2000
 
     def kiihdyta(self, nopeudenmuutos):
         uusnopeus = self.nopeus + nopeudenmuutos
