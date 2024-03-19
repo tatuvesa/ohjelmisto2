@@ -4,7 +4,7 @@ class auto:
         self.rekisteri = rekisteri
         self.huippunopeus = huippunopeus
         self.nopeus = 0
-        self.kokomatka = 2000
+        self.kokomatka = 0
 
     def kiihdyta(self, nopeudenmuutos):
         uusnopeus = self.nopeus + nopeudenmuutos
@@ -14,10 +14,6 @@ class auto:
             self.nopeus = 0
         else:
             self.nopeus = uusnopeus
-
-    def kulje(self, tunnit):
-        matka = self.nopeus * tunnit
-        self.kokomatka += matka
 
     def ominaisuudet(self):
         print(f"Rekisteritunnus: {self.rekisteri}\n"
@@ -36,6 +32,3 @@ hamburger.kiihdyta(-200)
 print(f"\nAuton nopeus hätäjarrutuksen jälkeen: ")
 hamburger.ominaisuudet()
 hamburger.kiihdyta(60)
-hamburger.kulje(1.5)
-print("\nMatka kuljettu 1.5 tunnin jälkeen: ")
-hamburger.ominaisuudet()
