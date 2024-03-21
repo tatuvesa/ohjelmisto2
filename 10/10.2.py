@@ -5,8 +5,6 @@ class Talo:
     def aja_hissia(self, hissi_numero, kohde_kerros):
         if hissi_numero < len(self.hissit):
             self.hissit[hissi_numero].siirry_kerrokseen(kohde_kerros)
-        else:
-            print("Annettua hissin numeroa ei ole olemassa.")
 
 
 class Hissi:

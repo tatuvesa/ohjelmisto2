@@ -5,11 +5,10 @@ class Talo:
     def aja_hissia(self, hissi_numero, kohde_kerros):
         if hissi_numero < len(self.hissit):
             self.hissit[hissi_numero].siirry_kerrokseen(kohde_kerros)
-        else:
-            print("Annettua hissin numeroa ei ole olemassa.")
 
     def palohalytys(self):
-        for hissi in self.hissit:
+        for i, hissi in enumerate(self.hissit):
+            print(f"Hissi numero {i + 1}: ")
             hissi.siirry_kerrokseen(hissi.alin_kerros)
 
 class Hissi:
