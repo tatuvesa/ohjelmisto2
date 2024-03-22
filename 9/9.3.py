@@ -17,8 +17,7 @@ class auto:
 
     def kulje(self, tunnit):
         # tunnit = float(input("Tunnit: "))
-        matka = self.nopeus * tunnit
-        self.kokomatka += matka
+        self.kokomatka += round(self.nopeus * tunnit)
 
     def ominaisuudet(self):
         print(f"Rekisteritunnus: {self.rekisteri}\n"

@@ -1,7 +1,7 @@
 import random
 
 
-class Auto:
+class auto:
 
     def __init__(self, rekisteri, huippunopeus):
         self.rekisteri = rekisteri
@@ -20,11 +20,10 @@ class Auto:
 
     def kulje(self, tunnit):
         # tunnit = float(input("Tunnit: "))
-        matka = self.nopeus * tunnit
-        self.kokomatka += matka
+        self.kokomatka += round(self.nopeus * tunnit)
 
 
-autot = [Auto(f"ABC-{i + 1}", random.randint(100, 200)) for i in range(10)]
+autot = [auto(f"ABC-{i + 1}", random.randint(100, 200)) for i in range(10)]
 
 while True:
     for auto in autot:
