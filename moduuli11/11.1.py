@@ -30,3 +30,4 @@ kirja = Kirja("Hytti n:o 6", "Rosa Liksom", 200)
 
 lehti.tulosta_tiedot()
 kirja.tulosta_tiedot()
+print("Amogus")
