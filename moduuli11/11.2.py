@@ -37,16 +37,34 @@ sähköauto = Sähköauto("ABC-15", 180, 52.5)
 polttomoottoriauto = Polttomoottoriauto("ACD-123", 165, 32.3)
 
 sähköauto.kiihdyta(60)
+sähköauto.kiihdyta(60)
+sähköauto.kiihdyta(60)
+polttomoottoriauto.kiihdyta(60)
+polttomoottoriauto.kiihdyta(60)
 polttomoottoriauto.kiihdyta(60)
 
-sähköauto.kulje(3)
-polttomoottoriauto.kulje(3)
+while True:
+    try:
+        kulkusähkö = int(input("Montako tuntia haluat sähkäauton kulkevan?: "))
+        break
+    except ValueError:
+        print("Syötä kokonaisluku.")
 
-print("\nMatka kuljettu 3 tunnin jälkeen:\n")
+while True:
+    try:
+        kulkupoltto = int(input("Montako tuntia haluat polttomoottorillisen auton kulkevan?: "))
+        break
+    except ValueError:
+        print("Syötä kokonaisluku.")
+
+sähköauto.kulje(kulkusähkö)
+polttomoottoriauto.kulje(kulkupoltto)
+
+print(f"\nSähköauton kulkema matka {kulkusähkö} tunnin jälkeen:\n")
 print("        Sähköauto")
 print("-------------------------")
 sähköauto.ominaisuudet()
-print("\n")
+print(f"\nPolttomoottoriauton matka {kulkupoltto} tunnin jälkeen:\n")
 print("      Polttomoottori")
 print("--------------------------")
 polttomoottoriauto.ominaisuudet()
