@@ -42,7 +42,7 @@ polttomoottoriauto.kiihdyta(60)
 sähköauto.kulje(3)
 polttomoottoriauto.kulje(3)
 
-print("\nMatka kuljettu 3 tunnin jälkeen: \n")
+print("\nMatka kuljettu 3 tunnin jälkeen:\n")
 print("        Sähköauto")
 print("-------------------------")
 sähköauto.ominaisuudet()
