@@ -23,15 +23,18 @@ class Auto:
               f"Nopeus         : {self.nopeus} km/h\n"
               f"Matka          : {self.kokomatka} km")
 
+
 class Sähköauto(Auto):
     def __init__(self, rekisteri, huippunopeus, akkukapasiteetti):
         super().__init__(rekisteri, huippunopeus)
         self.akkukapasiteetti = akkukapasiteetti
 
+
 class Polttomoottoriauto(Auto):
     def __init__(self, rekisteri, huippunopeus, bensatankin_koko):
         super().__init__(rekisteri, huippunopeus)
         self.bensatankin_koko = bensatankin_koko
+
 
 sähköauto = Sähköauto("ABC-15", 180, 52.5)
 polttomoottoriauto = Polttomoottoriauto("ACD-123", 165, 32.3)
@@ -43,28 +46,28 @@ polttomoottoriauto.kiihdyta(60)
 polttomoottoriauto.kiihdyta(60)
 polttomoottoriauto.kiihdyta(60)
 
-while True:
-    try:
-        kulkusähkö = int(input("Montako tuntia haluat sähkäauton kulkevan?: "))
-        break
-    except ValueError:
-        print("Syötä kokonaisluku.")
+# while True:
+#    try:
+#        kulkusähkö = int(input("Montako tuntia haluat sähkäauton kulkevan?: "))
+#        break
+#    except ValueError:
+#        print("Syötä kokonaisluku.")
 
-while True:
-    try:
-        kulkupoltto = int(input("Montako tuntia haluat polttomoottorillisen auton kulkevan?: "))
-        break
-    except ValueError:
-        print("Syötä kokonaisluku.")
+# while True:
+#    try:
+#        kulkupoltto = int(input("Montako tuntia haluat polttomoottorillisen auton kulkevan?: "))
+#        break
+#    except ValueError:
+#        print("Syötä kokonaisluku.")
 
-sähköauto.kulje(kulkusähkö)
-polttomoottoriauto.kulje(kulkupoltto)
+sähköauto.kulje(3)
+polttomoottoriauto.kulje(3)
 
-print(f"\nSähköauton kulkema matka {kulkusähkö} tunnin jälkeen:\n")
+print(f"\nSähköauton kulkema matka {3} tunnin jälkeen:\n")
 print("        Sähköauto")
 print("-------------------------")
 sähköauto.ominaisuudet()
-print(f"\nPolttomoottoriauton matka {kulkupoltto} tunnin jälkeen:\n")
+print(f"\nPolttomoottoriauton matka {3} tunnin jälkeen:\n")
 print("      Polttomoottori")
 print("--------------------------")
 polttomoottoriauto.ominaisuudet()
