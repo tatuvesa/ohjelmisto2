@@ -1,5 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, Response
 import mysql.connector
+import json
 
 app = Flask(__name__)
 
@@ -12,14 +13,19 @@ mydb = mysql.connector.connect(
     autocommit=True
 )
 
-@app.route('/kenttä/<icao_code>')
+
+@app.route('/kentta/<icao_code>')
 def get_airport(icao_code):
     cursor = mydb.cursor(dictionary=True)
-    cursor.execute("SELECT icao, name, municipality FROM airports WHERE icao = %s", (icao_code,))
+    cursor.execute("SELECT ident, name, municipality FROM airport WHERE ident = %s", (icao_code,))
     airport = cursor.fetchone()
     if airport is None:
-        return jsonify({"error": "No airport found with the given ICAO code"}), 404
-    return jsonify({"ICAO": airport['icao'], "Name": airport['name'], "Municipality": airport['municipality']})
+        return Response(json.dumps({"error": "Syöttämälläsi ICAO-koodilla ei löytynyt lentokenttää."}), status=404,
+                        mimetype='application/json')
+    return Response(
+        json.dumps({"ICAO": airport['ident'], "Name": airport['name'], "Municipality": airport['municipality']}),
+        status=200, mimetype='application/json')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)

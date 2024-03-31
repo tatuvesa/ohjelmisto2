@@ -24,3 +24,5 @@ def check_prime(n):
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)
+
+# http://127.0.0.1:3000/alkuluku/7
