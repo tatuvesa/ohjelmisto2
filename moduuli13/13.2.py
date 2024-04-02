@@ -14,7 +14,7 @@ mydb = mysql.connector.connect(
 )
 
 
-@app.route('/kentta/<icao_code>')
+@app.route('/kentta/<string:icao_code>')
 def get_airport(icao_code):
     cursor = mydb.cursor(dictionary=True)
     cursor.execute("SELECT ident, name, municipality FROM airport WHERE ident = %s", (icao_code,))
